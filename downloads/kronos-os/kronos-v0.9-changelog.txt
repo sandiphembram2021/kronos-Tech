@@ -1,0 +1,52 @@
+Kronos OS v0.9 Beta - Changelog
+================================
+
+Release Date: May 15, 2024
+File Size: ~580 MB
+
+New Features:
+=============
+- Enhanced GUI desktop environment
+- Improved memory management
+- Added network stack support
+- Basic file system operations
+- Command-line utilities expansion
+- Boot optimization improvements
+
+Bug Fixes:
+===========
+- Fixed kernel panic on certain hardware
+- Resolved memory leaks in GUI components
+- Improved USB device detection
+- Fixed display driver compatibility issues
+- Corrected file permission handling
+
+Performance Improvements:
+========================
+- 25% faster boot time
+- Reduced memory footprint
+- Optimized disk I/O operations
+- Enhanced graphics rendering
+
+Known Issues:
+=============
+- Limited WiFi driver support
+- Audio drivers not yet implemented
+- Some UEFI systems may have compatibility issues
+- Virtual memory management needs optimization
+
+System Requirements:
+===================
+- 64-bit CPU (x86_64)
+- 512MB RAM minimum (1GB recommended)
+- Legacy BIOS support
+- USB bootable device
+
+Installation:
+=============
+1. Download kronos-v0.9-beta.iso
+2. Flash to USB using Rufus or Balena Etcher
+3. Boot from USB
+4. Type 'gui' to enter desktop mode
+
+For support: sandiphembram2021@gmail.com

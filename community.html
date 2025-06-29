@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Kronos OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .community-page {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+        
+        .community-header {
+            background: linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #f7931e 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .community-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .community-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .community-content {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .community-content h2 {
+            color: #ff4500;
+            border-bottom: 2px solid #ff4500;
+            padding-bottom: 10px;
+            margin: 40px 0 25px 0;
+            font-size: 2rem;
+        }
+        
+        .community-content h3 {
+            color: #333;
+            margin: 30px 0 15px 0;
+            font-size: 1.4rem;
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .platform-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 5px solid #ff4500;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 69, 0, 0.1);
+        }
+        
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .platform-icon {
+            font-size: 2.5rem;
+            color: #ff4500;
+        }
+        
+        .platform-title {
+            font-size: 1.3rem;
+            color: #333;
+            margin: 0;
+        }
+        
+        .platform-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .platform-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        
+        .platform-features li {
+            padding: 5px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .platform-features i {
+            color: #ff4500;
+            width: 16px;
+        }
+        
+        .platform-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ff4500;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-button:hover {
+            background: #e63e00;
+            transform: translateY(-2px);
+        }
+        
+        .contribution-guide {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .contribution-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .step-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
+            background: #ff4500;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        
+        .step-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .step-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Social Media Styles */
+        .social-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0 50px 0;
+        }
+
+        .social-platform {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 5px solid #ff4500;
+            transition: all 0.3s ease;
+        }
+
+        .social-platform:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 69, 0, 0.1);
+        }
+
+        .social-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-icon-large {
+            font-size: 3rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .social-icon-large.github {
+            background: linear-gradient(135deg, #333, #24292e);
+        }
+
+        .social-icon-large.linkedin {
+            background: linear-gradient(135deg, #0077b5, #005885);
+        }
+
+        .social-icon-large.twitter {
+            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+        }
+
+        .social-icon-large.youtube {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+        }
+
+        .social-header h3 {
+            margin: 0 0 5px 0;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .social-header p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .social-platform > p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .social-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .social-metrics span {
+            background: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-metrics i {
+            color: #ff4500;
+        }
+
+        .social-follow-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .github-btn {
+            background: #333;
+        }
+
+        .github-btn:hover {
+            background: #24292e;
+            transform: translateY(-2px);
+        }
+
+        .linkedin-btn {
+            background: #0077b5;
+        }
+
+        .linkedin-btn:hover {
+            background: #005885;
+            transform: translateY(-2px);
+        }
+
+        .twitter-btn {
+            background: #1da1f2;
+        }
+
+        .twitter-btn:hover {
+            background: #0d8bd9;
+            transform: translateY(-2px);
+        }
+
+        .youtube-btn {
+            background: #ff0000;
+        }
+
+        .youtube-btn:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+        }
+
+        .cta-buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-buttons .platform-button {
+            margin: 0 7px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ff4500;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        
+        .back-link:hover {
+            background: #e63e00;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .community-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .community-content {
+                padding: 25px;
+            }
+
+            .platform-grid, .contribution-steps, .social-media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-platform {
+                padding: 20px;
+            }
+
+            .social-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .social-metrics {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="community-page">
+        <div class="community-header">
+            <div class="container">
+                <h1><i class="fas fa-users"></i> Kronos OS Community</h1>
+                <p>Join a vibrant community of developers, enthusiasts, and learners building the future of operating systems together</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="community-content">
+                <h1>Welcome to the Kronos OS Community!</h1>
+                <p>Kronos OS is more than just an operating system—it's a collaborative project that brings together developers, students, and technology enthusiasts from around the world. Whether you're interested in learning about OS development, contributing code, or simply exploring what's possible, there's a place for you here.</p>
+                
+                <h2><i class="fas fa-share-alt"></i> Follow Us on Social Media</h2>
+
+                <div class="social-media-grid">
+                    <div class="social-platform">
+                        <div class="social-header">
+                            <i class="fab fa-github social-icon-large github"></i>
+                            <div>
+                                <h3>GitHub</h3>
+                                <p>@sandiphembram2021/kronos-operating-system</p>
+                            </div>
+                        </div>
+                        <p>Follow our development progress, star the repository, and get notified about new releases.</p>
+                        <div class="social-metrics">
+                            <span><i class="fas fa-star"></i> 150+ Stars</span>
+                            <span><i class="fas fa-code-branch"></i> 25+ Forks</span>
+                            <span><i class="fas fa-eye"></i> 30+ Watchers</span>
+                        </div>
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system" class="social-follow-btn github-btn" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> Follow on GitHub
+                        </a>
+                    </div>
+
+                    <div class="social-platform">
+                        <div class="social-header">
+                            <i class="fab fa-linkedin social-icon-large linkedin"></i>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <p>@sandiphembram2021</p>
+                            </div>
+                        </div>
+                        <p>Connect for professional updates, project milestones, and career opportunities in OS development.</p>
+                        <div class="social-metrics">
+                            <span><i class="fas fa-users"></i> Professional Network</span>
+                            <span><i class="fas fa-briefcase"></i> Career Updates</span>
+                            <span><i class="fas fa-handshake"></i> Collaborations</span>
+                        </div>
+                        <a href="https://linkedin.com/in/sandiphembram2021" class="social-follow-btn linkedin-btn" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                        </a>
+                    </div>
+
+                    <div class="social-platform">
+                        <div class="social-header">
+                            <i class="fab fa-twitter social-icon-large twitter"></i>
+                            <div>
+                                <h3>Twitter</h3>
+                                <p>@sandiphembram21</p>
+                            </div>
+                        </div>
+                        <p>Get quick updates, development tips, and engage with the OS development community.</p>
+                        <div class="social-metrics">
+                            <span><i class="fas fa-hashtag"></i> #KronosOS</span>
+                            <span><i class="fas fa-retweet"></i> Dev Updates</span>
+                            <span><i class="fas fa-heart"></i> Community</span>
+                        </div>
+                        <a href="https://twitter.com/sandiphembram21" class="social-follow-btn twitter-btn" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i> Follow on Twitter
+                        </a>
+                    </div>
+
+                    <div class="social-platform">
+                        <div class="social-header">
+                            <i class="fab fa-youtube social-icon-large youtube"></i>
+                            <div>
+                                <h3>YouTube</h3>
+                                <p>@sandiphembram2021</p>
+                            </div>
+                        </div>
+                        <p>Watch video tutorials, live coding sessions, and detailed explanations of OS concepts.</p>
+                        <div class="social-metrics">
+                            <span><i class="fas fa-play"></i> OS Tutorials</span>
+                            <span><i class="fas fa-video"></i> Live Demos</span>
+                            <span><i class="fas fa-graduation-cap"></i> Learning</span>
+                        </div>
+                        <a href="https://youtube.com/@sandiphembram2021" class="social-follow-btn youtube-btn" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i> Subscribe on YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <h2><i class="fas fa-globe"></i> Community Platforms</h2>
+                
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <i class="fab fa-github platform-icon"></i>
+                            <h3 class="platform-title">GitHub Repository</h3>
+                        </div>
+                        <p class="platform-description">The heart of Kronos OS development. Access source code, track issues, and contribute to the project.</p>
+                        <ul class="platform-features">
+                            <li><i class="fas fa-code"></i> Complete source code access</li>
+                            <li><i class="fas fa-bug"></i> Issue tracking and bug reports</li>
+                            <li><i class="fas fa-git-alt"></i> Pull request submissions</li>
+                            <li><i class="fas fa-star"></i> Star the project to show support</li>
+                        </ul>
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system" class="platform-button" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> Visit Repository
+                        </a>
+                    </div>
+                    
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <i class="fas fa-comments platform-icon"></i>
+                            <h3 class="platform-title">GitHub Discussions</h3>
+                        </div>
+                        <p class="platform-description">Share ideas, ask questions, and engage in technical discussions with the community.</p>
+                        <ul class="platform-features">
+                            <li><i class="fas fa-question-circle"></i> Q&A support forum</li>
+                            <li><i class="fas fa-lightbulb"></i> Feature ideas and suggestions</li>
+                            <li><i class="fas fa-users"></i> Community announcements</li>
+                            <li><i class="fas fa-graduation-cap"></i> Learning resources</li>
+                        </ul>
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system/discussions" class="platform-button" target="_blank" rel="noopener">
+                            <i class="fas fa-comments"></i> Join Discussions
+                        </a>
+                    </div>
+                    
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <i class="fas fa-envelope platform-icon"></i>
+                            <h3 class="platform-title">Direct Contact</h3>
+                        </div>
+                        <p class="platform-description">Get in touch directly with the development team for collaboration, support, or partnership opportunities.</p>
+                        <ul class="platform-features">
+                            <li><i class="fas fa-handshake"></i> Collaboration opportunities</li>
+                            <li><i class="fas fa-life-ring"></i> Technical support</li>
+                            <li><i class="fas fa-briefcase"></i> Partnership inquiries</li>
+                            <li><i class="fas fa-clock"></i> 24-48 hour response time</li>
+                        </ul>
+                        <a href="mailto:sandiphembram2021@gmail.com" class="platform-button">
+                            <i class="fas fa-envelope"></i> Contact Developer
+                        </a>
+                    </div>
+                    
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <i class="fas fa-bug platform-icon"></i>
+                            <h3 class="platform-title">Issue Tracker</h3>
+                        </div>
+                        <p class="platform-description">Report bugs, request features, and track the development progress of Kronos OS.</p>
+                        <ul class="platform-features">
+                            <li><i class="fas fa-exclamation-triangle"></i> Bug reporting</li>
+                            <li><i class="fas fa-plus-circle"></i> Feature requests</li>
+                            <li><i class="fas fa-tasks"></i> Development roadmap</li>
+                            <li><i class="fas fa-chart-line"></i> Progress tracking</li>
+                        </ul>
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system/issues" class="platform-button" target="_blank" rel="noopener">
+                            <i class="fas fa-bug"></i> Report Issues
+                        </a>
+                    </div>
+                </div>
+                
+                <h2><i class="fas fa-hands-helping"></i> How to Contribute</h2>
+                
+                <div class="contribution-guide">
+                    <h3>Getting Started with Contributions</h3>
+                    <p>Contributing to Kronos OS is a great way to learn about operating system development while helping improve the project. Here's how you can get involved:</p>
+                    
+                    <div class="contribution-steps">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h4>Fork the Repository</h4>
+                            <p>Create your own copy of the Kronos OS repository on GitHub</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h4>Set Up Development</h4>
+                            <p>Install build tools and set up your development environment</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h4>Find an Issue</h4>
+                            <p>Look for "good first issue" labels or create your own improvements</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <h4>Make Changes</h4>
+                            <p>Implement your feature or fix, following coding standards</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">5</div>
+                            <h4>Test Thoroughly</h4>
+                            <p>Test your changes in QEMU and document any new features</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">6</div>
+                            <h4>Submit Pull Request</h4>
+                            <p>Create a pull request with a clear description of your changes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2><i class="fas fa-code"></i> Areas for Contribution</h2>
+                
+                <h3>🔧 Core Development</h3>
+                <ul>
+                    <li><strong>Kernel Development:</strong> Memory management, process scheduling, system calls</li>
+                    <li><strong>Driver Development:</strong> Hardware drivers for network, audio, USB devices</li>
+                    <li><strong>File System:</strong> Implement file system support (FAT32, ext2, etc.)</li>
+                    <li><strong>GUI Framework:</strong> Enhance the desktop environment and window manager</li>
+                </ul>
+                
+                <h3>📚 Documentation</h3>
+                <ul>
+                    <li><strong>API Documentation:</strong> Document kernel APIs and system interfaces</li>
+                    <li><strong>User Guides:</strong> Create tutorials and how-to guides</li>
+                    <li><strong>Developer Docs:</strong> Architecture documentation and coding standards</li>
+                    <li><strong>Translation:</strong> Translate documentation to other languages</li>
+                </ul>
+                
+                <h3>🧪 Testing & Quality Assurance</h3>
+                <ul>
+                    <li><strong>Hardware Testing:</strong> Test on different hardware configurations</li>
+                    <li><strong>Automated Testing:</strong> Create unit tests and integration tests</li>
+                    <li><strong>Performance Testing:</strong> Benchmark and optimize system performance</li>
+                    <li><strong>Bug Hunting:</strong> Find and report bugs in existing features</li>
+                </ul>
+                
+                <h3>🎨 Design & User Experience</h3>
+                <ul>
+                    <li><strong>UI/UX Design:</strong> Improve the desktop environment design</li>
+                    <li><strong>Icon Design:</strong> Create icons for applications and system</li>
+                    <li><strong>Themes:</strong> Develop color themes and visual styles</li>
+                    <li><strong>Accessibility:</strong> Improve accessibility features</li>
+                </ul>
+                
+                <h2><i class="fas fa-graduation-cap"></i> Learning Resources</h2>
+                
+                <h3>For Beginners</h3>
+                <ul>
+                    <li><strong>OS Development Tutorial:</strong> Start with basic kernel concepts</li>
+                    <li><strong>C Programming:</strong> Master C language for system programming</li>
+                    <li><strong>Assembly Language:</strong> Learn x86_64 assembly basics</li>
+                    <li><strong>Git & GitHub:</strong> Version control and collaboration tools</li>
+                </ul>
+                
+                <h3>Advanced Topics</h3>
+                <ul>
+                    <li><strong>Memory Management:</strong> Virtual memory, paging, heap allocation</li>
+                    <li><strong>Interrupt Handling:</strong> IRQs, system calls, exception handling</li>
+                    <li><strong>Device Drivers:</strong> Hardware abstraction and driver development</li>
+                    <li><strong>Networking:</strong> TCP/IP stack implementation</li>
+                </ul>
+                
+                <h2><i class="fas fa-heart"></i> Community Guidelines</h2>
+                
+                <h3>Our Values</h3>
+                <ul>
+                    <li><strong>Inclusivity:</strong> Welcome developers of all skill levels and backgrounds</li>
+                    <li><strong>Learning:</strong> Encourage questions and knowledge sharing</li>
+                    <li><strong>Quality:</strong> Maintain high standards for code and documentation</li>
+                    <li><strong>Respect:</strong> Treat all community members with respect and kindness</li>
+                </ul>
+                
+                <h3>Code of Conduct</h3>
+                <p>We are committed to providing a friendly, safe, and welcoming environment for all contributors. Please read our full Code of Conduct on GitHub for detailed guidelines on community behavior and expectations.</p>
+                
+                <h2><i class="fas fa-trophy"></i> Recognition</h2>
+                <p>We believe in recognizing the valuable contributions of our community members:</p>
+                <ul>
+                    <li><strong>Contributors List:</strong> All contributors are acknowledged in our README</li>
+                    <li><strong>Special Recognition:</strong> Outstanding contributions are highlighted</li>
+                    <li><strong>Learning Opportunities:</strong> Mentorship and skill development support</li>
+                    <li><strong>Project Ownership:</strong> Active contributors can become maintainers</li>
+                </ul>
+                
+                <div class="contribution-guide">
+                    <h3>Ready to Get Started?</h3>
+                    <p>Join the Kronos OS community today and be part of building something amazing! Whether you're contributing code, documentation, testing, or just learning, every contribution matters.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system" class="platform-button" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> Start Contributing
+                        </a>
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system/discussions" class="platform-button" target="_blank" rel="noopener">
+                            <i class="fas fa-comments"></i> Join Discussion
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Download Page
+            </a>
+        </div>
+    </div>
+</body>
+</html>

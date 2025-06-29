@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kronos OS - Download</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-cog"></i>
+                        <span>Kronos OS</span>
+                    </div>
+                    <div class="version-badge">v1.0</div>
+                </div>
+                <h1 class="hero-title">A Modern 64-bit Operating System Built from Scratch</h1>
+                <p class="hero-subtitle">Download, build, and install a complete 64-bit operating system with GUI desktop, applications, and modern features. Ready for real hardware or virtual machines.</p>
+                
+                <div class="download-section">
+                    <a href="https://github.com/sandiphembram2021/kronos-operating-system/archive/refs/heads/main.zip" class="download-btn" id="downloadBtn" target="_blank" rel="noopener">
+                        <i class="fas fa-download"></i>
+                        Download Kronos OS Source
+                        <span class="file-size">~45 MB</span>
+                    </a>
+                    <div class="download-stats">
+                        <span id="downloadCount">1,247</span> downloads
+                    </div>
+                    <div class="download-note">
+                        <p><i class="fas fa-info-circle"></i> Downloads complete source code. Build with <code>make && make iso</code> to create bootable ISO.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- System Requirements -->
+    <section class="requirements">
+        <div class="container">
+            <h2><i class="fas fa-microchip"></i> System Requirements</h2>
+            <div class="req-grid">
+                <div class="req-item">
+                    <i class="fas fa-processor"></i>
+                    <h3>CPU</h3>
+                    <p>64-bit CPU (x86_64)</p>
+                </div>
+                <div class="req-item">
+                    <i class="fas fa-memory"></i>
+                    <h3>Memory</h3>
+                    <p>512MB RAM or higher</p>
+                </div>
+                <div class="req-item">
+                    <i class="fas fa-hdd"></i>
+                    <h3>BIOS</h3>
+                    <p>Legacy BIOS support</p>
+                </div>
+                <div class="req-item">
+                    <i class="fas fa-usb"></i>
+                    <h3>Boot</h3>
+                    <p>USB bootable</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Guide -->
+    <section class="installation">
+        <div class="container">
+            <h2><i class="fas fa-rocket"></i> Install Kronos OS on Your PC</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download & Build Kronos OS</h3>
+                        <p>Download the source code, install build tools (GCC, NASM, QEMU), then run <code>make && make iso</code> to create your bootable ISO file.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Create Bootable USB Drive</h3>
+                        <p>Use Balena Etcher, Rufus, or <code>dd</code> command to flash the generated kronos.iso to a USB drive (minimum 1GB).</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Boot from USB on Your PC</h3>
+                        <p>Restart your computer, enter BIOS/UEFI settings (F2/F12/Del), set USB as first boot device, and boot from the USB drive.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Launch Desktop Environment</h3>
+                        <p>Kronos OS will boot to command line. Type <code>gui</code> to launch the full desktop environment with applications, file manager, and terminal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="installation-note">
+                <div class="note-content">
+                    <h3><i class="fas fa-info-circle"></i> Installation Options</h3>
+                    <div class="install-options">
+                        <div class="install-option">
+                            <h4><i class="fas fa-desktop"></i> Real Hardware</h4>
+                            <p>Install directly on your PC for full performance. Supports most x86_64 systems with Legacy BIOS.</p>
+                        </div>
+                        <div class="install-option">
+                            <h4><i class="fas fa-cube"></i> Virtual Machine</h4>
+                            <p>Test safely in VirtualBox, VMware, or QEMU. Perfect for development and testing.</p>
+                        </div>
+                        <div class="install-option">
+                            <h4><i class="fas fa-usb"></i> Live USB</h4>
+                            <p>Run directly from USB without installation. Great for demonstrations and testing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads-section">
+        <div class="container">
+            <h2><i class="fas fa-download"></i> Downloads</h2>
+
+            <!-- Main Download -->
+            <div class="main-download">
+                <div class="download-card featured">
+                    <div class="download-header">
+                        <h3><i class="fab fa-github"></i> Kronos OS - Complete Source Code</h3>
+                        <span class="download-badge">Build & Install</span>
+                    </div>
+                    <p class="download-description">Download the complete Kronos OS source code with kernel, GUI desktop environment, applications, and build system. Compile to create your own bootable ISO and install on real hardware or virtual machines.</p>
+                    <div class="download-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Updated: June 29, 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-hdd"></i>
+                            <span>Download: ~45 MB | Built ISO: ~650 MB</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-desktop"></i>
+                            <span>64-bit OS with GUI Desktop</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tools"></i>
+                            <span>Complete Build System Included</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system/archive/refs/heads/main.zip" class="download-primary-btn" target="_blank" rel="noopener">
+                            <i class="fas fa-download"></i>
+                            Download Source Code
+                        </a>
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system" class="download-secondary-btn" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                            View on GitHub
+                        </a>
+                    </div>
+
+                    <div class="build-instructions-quick">
+                        <h4><i class="fas fa-hammer"></i> Quick Build Instructions</h4>
+                        <div class="build-steps-quick">
+                            <div class="quick-step">
+                                <span class="step-num">1</span>
+                                <span>Extract downloaded ZIP file</span>
+                            </div>
+                            <div class="quick-step">
+                                <span class="step-num">2</span>
+                                <span><a href="install-build-tools.html" target="_blank">Install build tools (GCC, NASM, QEMU)</a></span>
+                            </div>
+                            <div class="quick-step">
+                                <span class="step-num">3</span>
+                                <span>Run: <code>make && make iso</code></span>
+                            </div>
+                            <div class="quick-step">
+                                <span class="step-num">4</span>
+                                <span>Flash kronos.iso to USB and boot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Try Online -->
+            <div class="try-online">
+                <div class="download-card online-demo">
+                    <div class="download-header">
+                        <h3><i class="fas fa-play-circle"></i> Try Kronos OS Online</h3>
+                        <span class="demo-badge">No Download Required</span>
+                    </div>
+                    <p class="download-description">Experience Kronos OS directly in your browser with our interactive demo. No installation needed!</p>
+                    <div class="demo-features">
+                        <div class="feature-item">
+                            <i class="fas fa-desktop"></i>
+                            <span>Full Desktop Environment</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-terminal"></i>
+                            <span>Interactive Terminal</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-folder"></i>
+                            <span>File Manager</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-calculator"></i>
+                            <span>Built-in Applications</span>
+                        </div>
+                    </div>
+                    <div class="demo-actions">
+                        <a href="kronos-complete-demo.html" class="demo-primary-btn" target="_blank">
+                            <i class="fas fa-play"></i>
+                            Launch Complete Demo
+                        </a>
+                        <a href="kronos-gui-demo.html" class="demo-secondary-btn" target="_blank">
+                            <i class="fas fa-eye"></i>
+                            GUI Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Downloads -->
+            <div class="additional-downloads">
+                <h3>Interactive Demos & Documentation</h3>
+                <div class="downloads-grid">
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <h4>Terminal Demo</h4>
+                        <p>Interactive command-line interface demo</p>
+                        <div class="download-info">
+                            <span class="file-size">Local</span>
+                            <span class="file-format">HTML</span>
+                        </div>
+                        <a href="kronos-terminal-demo.html" class="download-link" target="_blank">
+                            <i class="fas fa-play"></i> Launch
+                        </a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <h4>File Manager Demo</h4>
+                        <p>Browse files and directories</p>
+                        <div class="download-info">
+                            <span class="file-size">Local</span>
+                            <span class="file-format">HTML</span>
+                        </div>
+                        <a href="kronos-file-manager-demo.html" class="download-link" target="_blank">
+                            <i class="fas fa-play"></i> Launch
+                        </a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h4>Games Demo</h4>
+                        <p>Built-in games and entertainment</p>
+                        <div class="download-info">
+                            <span class="file-size">Local</span>
+                            <span class="file-format">HTML</span>
+                        </div>
+                        <a href="kronos-games-demo.html" class="download-link" target="_blank">
+                            <i class="fas fa-play"></i> Launch
+                        </a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>System Settings</h4>
+                        <p>Configure system preferences</p>
+                        <div class="download-info">
+                            <span class="file-size">Local</span>
+                            <span class="file-format">HTML</span>
+                        </div>
+                        <a href="kronos-settings-demo.html" class="download-link" target="_blank">
+                            <i class="fas fa-play"></i> Launch
+                        </a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>Build Instructions</h4>
+                        <p>Complete setup and build guide</p>
+                        <div class="download-info">
+                            <span class="file-size">~5 KB</span>
+                            <span class="file-format">.md</span>
+                        </div>
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/setup.md" class="download-link" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i> View
+                        </a>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h4>System Information</h4>
+                        <p>Hardware and system details demo</p>
+                        <div class="download-info">
+                            <span class="file-size">Local</span>
+                            <span class="file-format">HTML</span>
+                        </div>
+                        <a href="kronos-system-info-demo.html" class="download-link" target="_blank">
+                            <i class="fas fa-play"></i> Launch
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Raw Project Files -->
+            <div class="raw-files-section">
+                <h3>Browse Raw Project Files</h3>
+                <p class="section-description">Explore the complete Kronos OS source code, build scripts, and documentation files directly.</p>
+
+                <div class="file-categories">
+                    <div class="file-category">
+                        <h4><i class="fas fa-code"></i> Source Code</h4>
+                        <div class="file-list">
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/tree/main/src" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-folder"></i> src/ - Complete source code
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/tree/main/include" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-folder"></i> include/ - Header files
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/Makefile" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-code"></i> Makefile - Build system
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/grub.cfg" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-code"></i> grub.cfg - Boot configuration
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="file-category">
+                        <h4><i class="fas fa-book"></i> Documentation</h4>
+                        <div class="file-list">
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/README.md" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-alt"></i> README.md - Main documentation
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/KRONOS_OS_COMPLETE_SUMMARY.md" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-alt"></i> Complete OS Summary
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/setup.md" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-alt"></i> setup.md - Build instructions
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/RUN-REAL-KRONOS.md" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-alt"></i> Hardware installation guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="file-category">
+                        <h4><i class="fas fa-desktop"></i> Demo Files</h4>
+                        <div class="file-list">
+                            <a href="kronos-complete-demo.html" class="file-link" target="_blank">
+                                <i class="fas fa-play-circle"></i> Complete Desktop Demo
+                            </a>
+                            <a href="kronos-gui-demo.html" class="file-link" target="_blank">
+                                <i class="fas fa-play-circle"></i> GUI Demo
+                            </a>
+                            <a href="kronos-terminal-demo.html" class="file-link" target="_blank">
+                                <i class="fas fa-play-circle"></i> Terminal Demo
+                            </a>
+                            <a href="kronos-file-manager-demo.html" class="file-link" target="_blank">
+                                <i class="fas fa-play-circle"></i> File Manager Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="file-category">
+                        <h4><i class="fas fa-tools"></i> Build Scripts</h4>
+                        <div class="file-list">
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/auto-setup.sh" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-code"></i> auto-setup.sh - Automated setup
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/run-kronos.ps1" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-code"></i> run-kronos.ps1 - Windows runner
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/test-build.bat" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-code"></i> test-build.bat - Build tester
+                            </a>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/vm-setup.md" class="file-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-alt"></i> vm-setup.md - VM configuration
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="download-all-raw">
+                    <a href="https://github.com/sandiphembram2021/kronos-operating-system" class="browse-all-btn" target="_blank" rel="noopener">
+                        <i class="fas fa-folder-open"></i>
+                        Browse All Project Files on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Build & Documentation -->
+            <div class="build-documentation">
+                <h3>Build & Install Complete Operating System</h3>
+                <div class="build-steps">
+                    <div class="build-step">
+                        <div class="step-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="step-content">
+                            <h4>1. Download Complete OS Source</h4>
+                            <p>Get the full Kronos OS with kernel, GUI, and applications</p>
+                            <a href="https://github.com/sandiphembram2021/kronos-operating-system/archive/refs/heads/main.zip" class="step-link" target="_blank" rel="noopener">
+                                <i class="fas fa-download"></i> Download ZIP
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="build-step">
+                        <div class="step-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="step-content">
+                            <h4>2. Install Build Tools</h4>
+                            <p>Set up cross-compiler, NASM, and QEMU</p>
+                            <a href="install-build-tools.html" class="step-link" target="_blank">
+                                <i class="fas fa-tools"></i> Install Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="build-step">
+                        <div class="step-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <div class="step-content">
+                            <h4>3. Build Bootable ISO</h4>
+                            <p>Compile the complete OS and create installable ISO file</p>
+                            <div class="code-snippet">
+                                <code>make && make iso</code>
+                            </div>
+                            <div class="build-result">
+                                <p><strong>Result:</strong> kronos.iso (ready to install on PC)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="documentation-links">
+                    <h4>Documentation & Resources</h4>
+                    <div class="doc-links">
+                        <a href="readme.html" class="doc-link" target="_blank">
+                            <i class="fas fa-file-alt"></i> README
+                        </a>
+                        <a href="complete-summary.html" class="doc-link" target="_blank">
+                            <i class="fas fa-list-alt"></i> Complete Summary
+                        </a>
+                        <a href="run-real-hardware.html" class="doc-link" target="_blank">
+                            <i class="fas fa-rocket"></i> Run on Real Hardware
+                        </a>
+                        <a href="vm-setup.html" class="doc-link" target="_blank">
+                            <i class="fas fa-desktop"></i> VM Setup
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community">
+        <div class="container">
+            <h2><i class="fas fa-users"></i> Join the Kronos OS Community</h2>
+            <p class="community-intro">Connect with developers, contributors, and enthusiasts building the future of operating systems</p>
+
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub Discussions</h3>
+                    <p>Share ideas, ask questions, and collaborate on development</p>
+                    <div class="community-stats">
+                        <span><i class="fas fa-star"></i> 150+ Stars</span>
+                        <span><i class="fas fa-code-branch"></i> 25+ Forks</span>
+                    </div>
+                    <a href="https://github.com/sandiphembram2021/kronos-operating-system/discussions" class="community-link" target="_blank" rel="noopener">
+                        <i class="fas fa-comments"></i> Join Discussion
+                    </a>
+                </div>
+
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Issue Tracker</h3>
+                    <p>Report bugs, request features, and track development progress</p>
+                    <div class="community-stats">
+                        <span><i class="fas fa-exclamation-circle"></i> 12 Open Issues</span>
+                        <span><i class="fas fa-check-circle"></i> 45 Resolved</span>
+                    </div>
+                    <a href="https://github.com/sandiphembram2021/kronos-operating-system/issues" class="community-link" target="_blank" rel="noopener">
+                        <i class="fas fa-bug"></i> Report Issues
+                    </a>
+                </div>
+
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Contribute Code</h3>
+                    <p>Help improve Kronos OS by contributing code, documentation, or testing</p>
+                    <div class="community-stats">
+                        <span><i class="fas fa-users"></i> 8 Contributors</span>
+                        <span><i class="fas fa-git-alt"></i> 120+ Commits</span>
+                    </div>
+                    <a href="https://github.com/sandiphembram2021/kronos-operating-system/blob/main/CONTRIBUTING.md" class="community-link" target="_blank" rel="noopener">
+                        <i class="fas fa-code"></i> Start Contributing
+                    </a>
+                </div>
+
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Direct Contact</h3>
+                    <p>Get in touch with the development team for collaboration or support</p>
+                    <div class="community-stats">
+                        <span><i class="fas fa-clock"></i> 24h Response</span>
+                        <span><i class="fas fa-globe"></i> Worldwide</span>
+                    </div>
+                    <a href="mailto:sandiphembram2021@gmail.com" class="community-link">
+                        <i class="fas fa-envelope"></i> Contact Developer
+                    </a>
+                </div>
+            </div>
+
+            <div class="community-highlights">
+                <h3>Community Highlights</h3>
+                <div class="highlights-grid">
+                    <div class="highlight-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Educational Project</h4>
+                        <p>Perfect for learning OS development, kernel programming, and low-level systems</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Active Development</h4>
+                        <p>Regular updates, new features, and continuous improvements to the codebase</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-heart"></i>
+                        <h4>Open Source</h4>
+                        <p>MIT licensed, free to use, modify, and distribute for any purpose</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Welcoming Community</h4>
+                        <p>Friendly environment for beginners and experts alike to learn and contribute</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-media-section">
+                <h3>Follow Kronos OS</h3>
+                <p>Stay updated with the latest developments, releases, and community news</p>
+
+                <div class="social-grid">
+                    <div class="social-card">
+                        <div class="social-icon github">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h4>GitHub</h4>
+                        <p>Source code, releases, and development updates</p>
+                        <div class="social-stats">
+                            <span><i class="fas fa-star"></i> 150+ Stars</span>
+                            <span><i class="fas fa-eye"></i> 25+ Watchers</span>
+                        </div>
+                        <a href="https://github.com/sandiphembram2021/kronos-operating-system" class="social-link github-link" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> Follow on GitHub
+                        </a>
+                    </div>
+
+                    <div class="social-card">
+                        <div class="social-icon linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h4>LinkedIn</h4>
+                        <p>Professional updates and project milestones</p>
+                        <div class="social-stats">
+                            <span><i class="fas fa-users"></i> Professional Network</span>
+                            <span><i class="fas fa-briefcase"></i> Career Updates</span>
+                        </div>
+                        <a href="https://linkedin.com/in/sandiphembram2021" class="social-link linkedin-link" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                        </a>
+                    </div>
+
+                    <div class="social-card">
+                        <div class="social-icon twitter">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <h4>Twitter</h4>
+                        <p>Quick updates, tips, and community interactions</p>
+                        <div class="social-stats">
+                            <span><i class="fas fa-hashtag"></i> #KronosOS</span>
+                            <span><i class="fas fa-retweet"></i> Dev Updates</span>
+                        </div>
+                        <a href="https://twitter.com/sandiphembram21" class="social-link twitter-link" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i> Follow on Twitter
+                        </a>
+                    </div>
+
+                    <div class="social-card">
+                        <div class="social-icon youtube">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h4>YouTube</h4>
+                        <p>Video tutorials, demos, and development vlogs</p>
+                        <div class="social-stats">
+                            <span><i class="fas fa-play"></i> OS Tutorials</span>
+                            <span><i class="fas fa-video"></i> Live Demos</span>
+                        </div>
+                        <a href="https://youtube.com/@sandiphembram2021" class="social-link youtube-link" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i> Subscribe on YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <div class="social-newsletter">
+                    <h4><i class="fas fa-envelope"></i> Stay Updated</h4>
+                    <p>Get notified about major releases, new features, and community events</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" class="newsletter-input">
+                        <button type="button" class="newsletter-btn">
+                            <i class="fas fa-bell"></i> Subscribe
+                        </button>
+                    </div>
+                    <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+
+            <div class="community-cta">
+                <h3>Ready to Get Involved?</h3>
+                <p>Whether you're a seasoned developer or just starting out, there's a place for you in the Kronos OS community!</p>
+                <div class="cta-buttons">
+                    <a href="community.html" class="cta-primary" target="_blank">
+                        <i class="fas fa-users"></i> Explore Community
+                    </a>
+                    <a href="https://github.com/sandiphembram2021/kronos-operating-system" class="cta-secondary" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshots">
+        <div class="container">
+            <h2><i class="fas fa-images"></i> Screenshots</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-item">
+                    <img src="screenshots/boot.png" alt="Kronos OS Boot Screen" loading="lazy">
+                    <h3>Boot Screen</h3>
+                    <p>Clean and fast boot process</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="screenshots/shell.png" alt="Kronos OS Shell" loading="lazy">
+                    <h3>Command Shell</h3>
+                    <p>Powerful terminal interface</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="screenshots/desktop.png" alt="Kronos OS Desktop" loading="lazy">
+                    <h3>Desktop Environment</h3>
+                    <p>Modern graphical interface</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kronos OS</h3>
+                    <p>Developed by <strong>Sandip Hembram</strong></p>
+                    <p>Licensed under MIT License</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <a href="https://github.com/sandiphembram2021/kronos-operating-system" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> GitHub Repository
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="mailto:sandiphembram2021@gmail.com">
+                        <i class="fas fa-envelope"></i> sandiphembram2021@gmail.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kronos OS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Newsletter subscription functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterBtn = document.querySelector('.newsletter-btn');
+            const newsletterInput = document.querySelector('.newsletter-input');
+
+            if (newsletterBtn && newsletterInput) {
+                newsletterBtn.addEventListener('click', function() {
+                    const email = newsletterInput.value.trim();
+
+                    if (email && isValidEmail(email)) {
+                        // Simulate subscription (replace with actual implementation)
+                        newsletterBtn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+                        newsletterBtn.style.background = '#27ae60';
+                        newsletterInput.value = '';
+
+                        setTimeout(() => {
+                            newsletterBtn.innerHTML = '<i class="fas fa-bell"></i> Subscribe';
+                            newsletterBtn.style.background = 'white';
+                        }, 3000);
+                    } else {
+                        alert('Please enter a valid email address');
+                    }
+                });
+
+                newsletterInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        newsletterBtn.click();
+                    }
+                });
+            }
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+    </script>
+</body>
+</html>

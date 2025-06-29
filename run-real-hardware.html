@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run on Real Hardware - Kronos OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .doc-page {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+        
+        .doc-header {
+            background: linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #f7931e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .doc-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .doc-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+        }
+        
+        .doc-content h2 {
+            color: #ff4500;
+            border-bottom: 2px solid #ff4500;
+            padding-bottom: 10px;
+            margin: 30px 0 20px 0;
+        }
+        
+        .doc-content h3 {
+            color: #333;
+            margin: 25px 0 15px 0;
+        }
+        
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .step-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ff4500;
+        }
+        
+        .step-item h4 {
+            color: #ff4500;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-number {
+            background: #ff4500;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning-box i {
+            color: #f39c12;
+            margin-right: 10px;
+        }
+        
+        .danger-box {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .danger-box i {
+            color: #dc3545;
+            margin-right: 10px;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success-box i {
+            color: #27ae60;
+            margin-right: 10px;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .compatibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .compat-item {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .compat-good {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .compat-partial {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .compat-poor {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ff4500;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        
+        .back-link:hover {
+            background: #e63e00;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .doc-header h1 {
+                font-size: 2rem;
+            }
+            
+            .doc-content {
+                padding: 20px;
+            }
+            
+            .step-grid, .compatibility-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-page">
+        <div class="doc-header">
+            <div class="container">
+                <h1><i class="fas fa-rocket"></i> Run Kronos OS on Real Hardware</h1>
+                <p>Complete guide for installing and running Kronos OS on physical computers</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="doc-content">
+                <h1>Installing Kronos OS on Real Hardware</h1>
+                <p>This guide will walk you through the process of installing and running Kronos OS on actual computer hardware. Please read all warnings and requirements before proceeding.</p>
+                
+                <div class="danger-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>Important Warning:</strong> Installing an operating system can potentially damage your computer or cause data loss. Always backup your important data and proceed at your own risk. This is experimental software.
+                </div>
+                
+                <h2><i class="fas fa-clipboard-check"></i> Prerequisites</h2>
+                
+                <h3>Hardware Requirements</h3>
+                <ul>
+                    <li><strong>CPU:</strong> 64-bit x86_64 processor (Intel/AMD)</li>
+                    <li><strong>RAM:</strong> Minimum 512MB, recommended 1GB or more</li>
+                    <li><strong>Storage:</strong> USB drive (minimum 1GB) for bootable media</li>
+                    <li><strong>BIOS:</strong> Legacy BIOS support (UEFI not yet supported)</li>
+                    <li><strong>Graphics:</strong> VGA-compatible display adapter</li>
+                    <li><strong>Input:</strong> PS/2 or USB keyboard and mouse</li>
+                </ul>
+                
+                <h3>Software Requirements</h3>
+                <ul>
+                    <li>USB flashing tool (Rufus, Balena Etcher, or dd command)</li>
+                    <li>Built Kronos OS ISO file</li>
+                    <li>Access to computer BIOS/UEFI settings</li>
+                </ul>
+                
+                <h2><i class="fas fa-hammer"></i> Step-by-Step Installation</h2>
+                
+                <div class="step-grid">
+                    <div class="step-item">
+                        <h4><span class="step-number">1</span> Build Kronos OS</h4>
+                        <p>First, build the Kronos OS ISO file from source code:</p>
+                        <div class="code-block">
+git clone https://github.com/sandiphembram2021/kronos-operating-system.git
+cd kronos-operating-system
+make && make iso
+                        </div>
+                        <p>This creates <code>kronos.iso</code> in your build directory.</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4><span class="step-number">2</span> Prepare USB Drive</h4>
+                        <p>Create a bootable USB drive using your preferred tool:</p>
+                        <p><strong>Using Rufus (Windows):</strong></p>
+                        <ol>
+                            <li>Download Rufus from rufus.ie</li>
+                            <li>Select your USB drive</li>
+                            <li>Choose the kronos.iso file</li>
+                            <li>Click "START"</li>
+                        </ol>
+                        <p><strong>Using dd (Linux/macOS):</strong></p>
+                        <div class="code-block">
+sudo dd if=kronos.iso of=/dev/sdX bs=4M status=progress
+# Replace /dev/sdX with your USB device
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4><span class="step-number">3</span> Configure BIOS</h4>
+                        <p>Boot your computer and enter BIOS setup:</p>
+                        <ul>
+                            <li>Press F2, F12, Del, or Esc during startup</li>
+                            <li>Navigate to Boot settings</li>
+                            <li>Set USB as first boot device</li>
+                            <li>Disable Secure Boot if present</li>
+                            <li>Enable Legacy BIOS mode</li>
+                            <li>Save and exit</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4><span class="step-number">4</span> Boot Kronos OS</h4>
+                        <p>Insert the USB drive and restart your computer:</p>
+                        <ul>
+                            <li>Computer should boot from USB</li>
+                            <li>GRUB bootloader will appear</li>
+                            <li>Select "Kronos OS" from menu</li>
+                            <li>Wait for kernel to load</li>
+                            <li>You'll see the Kronos shell prompt</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4><span class="step-number">5</span> Launch GUI</h4>
+                        <p>Once booted to the shell, start the desktop:</p>
+                        <div class="code-block">
+kronos> gui
+                        </div>
+                        <p>This will launch the full desktop environment with:</p>
+                        <ul>
+                            <li>Desktop with wallpaper</li>
+                            <li>Taskbar with start menu</li>
+                            <li>Window manager</li>
+                            <li>Built-in applications</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h4><span class="step-number">6</span> Explore System</h4>
+                        <p>Try the available applications and features:</p>
+                        <ul>
+                            <li>Terminal emulator</li>
+                            <li>File manager</li>
+                            <li>Text editor</li>
+                            <li>Calculator</li>
+                            <li>Games</li>
+                            <li>System settings</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2><i class="fas fa-desktop"></i> Hardware Compatibility</h2>
+                
+                <h3>Tested Hardware</h3>
+                <div class="compatibility-grid">
+                    <div class="compat-item compat-good">
+                        <h4><i class="fas fa-check-circle"></i> Excellent</h4>
+                        <p>Intel Core i3/i5/i7 (2010+)<br>
+                        Standard VGA graphics<br>
+                        PS/2 keyboard/mouse</p>
+                    </div>
+                    <div class="compat-item compat-partial">
+                        <h4><i class="fas fa-exclamation-circle"></i> Partial</h4>
+                        <p>AMD Ryzen processors<br>
+                        USB keyboard/mouse<br>
+                        Integrated graphics</p>
+                    </div>
+                    <div class="compat-item compat-poor">
+                        <h4><i class="fas fa-times-circle"></i> Limited</h4>
+                        <p>UEFI-only systems<br>
+                        Modern laptops<br>
+                        Discrete graphics cards</p>
+                    </div>
+                </div>
+                
+                <h3>Known Issues</h3>
+                <ul>
+                    <li><strong>UEFI Systems:</strong> May not boot without Legacy BIOS mode</li>
+                    <li><strong>Secure Boot:</strong> Must be disabled for installation</li>
+                    <li><strong>WiFi:</strong> No wireless network support yet</li>
+                    <li><strong>Audio:</strong> Sound drivers not implemented</li>
+                    <li><strong>USB 3.0:</strong> Limited USB support</li>
+                    <li><strong>Modern Graphics:</strong> No GPU acceleration</li>
+                </ul>
+                
+                <h2><i class="fas fa-tools"></i> Troubleshooting</h2>
+                
+                <h3>Boot Issues</h3>
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>System won't boot from USB:</strong>
+                    <ul>
+                        <li>Verify USB drive is properly flashed</li>
+                        <li>Check BIOS boot order settings</li>
+                        <li>Try different USB ports</li>
+                        <li>Disable Secure Boot</li>
+                        <li>Enable Legacy BIOS mode</li>
+                    </ul>
+                </div>
+                
+                <h3>Kernel Panic</h3>
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>System crashes during boot:</strong>
+                    <ul>
+                        <li>Hardware may not be compatible</li>
+                        <li>Try different computer</li>
+                        <li>Check memory requirements</li>
+                        <li>Report issue on GitHub</li>
+                    </ul>
+                </div>
+                
+                <h3>Display Problems</h3>
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>No display or garbled output:</strong>
+                    <ul>
+                        <li>Ensure VGA-compatible graphics</li>
+                        <li>Try different monitor/cable</li>
+                        <li>Check display resolution settings</li>
+                        <li>Some modern graphics may not work</li>
+                    </ul>
+                </div>
+                
+                <h2><i class="fas fa-shield-alt"></i> Safety Considerations</h2>
+                
+                <div class="danger-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>Important Safety Notes:</strong>
+                    <ul>
+                        <li>Kronos OS is experimental software</li>
+                        <li>Always backup important data before testing</li>
+                        <li>Use on test machines when possible</li>
+                        <li>Monitor system temperature during use</li>
+                        <li>Have recovery media available</li>
+                    </ul>
+                </div>
+                
+                <h2><i class="fas fa-laptop"></i> Recommended Test Systems</h2>
+                
+                <h3>Ideal Hardware for Testing</h3>
+                <ul>
+                    <li><strong>Older Desktop PCs:</strong> 2010-2015 era systems work best</li>
+                    <li><strong>Virtual Machines:</strong> VirtualBox or VMware for safe testing</li>
+                    <li><strong>Dedicated Test Machine:</strong> Computer you can afford to experiment with</li>
+                    <li><strong>Standard Components:</strong> Avoid exotic or very new hardware</li>
+                </ul>
+                
+                <h3>What to Avoid</h3>
+                <ul>
+                    <li>Primary work computers</li>
+                    <li>Systems with important data</li>
+                    <li>UEFI-only modern laptops</li>
+                    <li>Systems with custom firmware</li>
+                </ul>
+                
+                <h2><i class="fas fa-bug"></i> Reporting Issues</h2>
+                <p>If you encounter problems running Kronos OS on real hardware:</p>
+                <ol>
+                    <li>Document your hardware specifications</li>
+                    <li>Note the exact error messages</li>
+                    <li>Take photos/videos if helpful</li>
+                    <li>Report on GitHub: <a href="https://github.com/sandiphembram2021/kronos-operating-system/issues" target="_blank">github.com/sandiphembram2021/kronos-operating-system/issues</a></li>
+                    <li>Contact: <a href="mailto:sandiphembram2021@gmail.com">sandiphembram2021@gmail.com</a></li>
+                </ol>
+                
+                <div class="success-box">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>Success!</strong> If Kronos OS boots and runs on your hardware, you're experiencing a custom operating system built from scratch. Explore the desktop environment and built-in applications!
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Download Page
+            </a>
+        </div>
+    </div>
+</body>
+</html>
