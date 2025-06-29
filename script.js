@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const downloadBtn = document.getElementById('downloadBtn');
     
     if (downloadBtn) {
-        downloadBtn.addEventListener('click', function(e) {
+        downloadBtn.addEventListener('click', function() {
             // Increment download count when button is clicked
             downloadCount++;
             updateDownloadCount();
