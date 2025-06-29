@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Kronos OS Download Page
 
 A modern, responsive download page for the Kronos OS operating system.
@@ -129,3 +130,6 @@ This download page template is provided under the MIT License. Feel free to use 
 ## Contact
 
 For questions about this template, contact: info.zancap@gmail.com
+=======
+# kronos-Tech
+>>>>>>> 0364afe61c1fe6e478a315df6cdaa2fabff1533a
